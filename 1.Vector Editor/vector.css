@@ -10,6 +10,45 @@ body {
 
 
 
+/* WORKSPACE........................................................*/
+
+
+#workspace-panel {
+  background: #252525;
+  border-bottom: 1px solid #444;
+  padding: 5px 100px;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.workspace-content {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.workspace-btn {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.workspace-btn:hover {
+  background: #666;
+}
+
+.workspace-text {
+  color: #ccc;
+  font-size: 14px;
+}
+
+
+
+
 
 /* EDICTOR CANVAS ........................... */
 

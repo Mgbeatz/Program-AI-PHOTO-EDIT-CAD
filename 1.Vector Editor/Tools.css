@@ -228,3 +228,99 @@
   background: #666;
 } */
 
+/* TEXT STYLING ...............................................*/
+
+#text-panel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #252525;
+  padding: 5px;
+  border-bottom: 1px solid #444;
+}
+
+#text-panel select,
+#text-panel input[type="number"],
+#text-panel button {
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 3px;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+#text-panel button:hover {
+  background: #666;
+}
+
+#text-panel select {
+  min-width: 140px;
+}
+
+#text-panel button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+/* BLEND MODE......................................................................*/
+
+
+.blend-mode-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #252525;
+  padding: 5px;
+  border-bottom: 1px solid #444;
+}
+
+.blend-mode-control label {
+  color: white;
+  font-size: 14px;
+}
+
+.blend-mode-control select {
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 3px;
+  padding: 3px 6px;
+}
+
+
+
+/* PROPERTIES POSITION................................................................*/
+
+.properties-controls {
+  background: #252525;
+  padding: 8px;
+  border-top: 1px solid #444;
+  color: white;
+}
+
+.properties-controls h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.properties-controls label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.properties-controls input[type="number"] {
+  width: 70px;
+  padding: 2px 4px;
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 3px;
+}

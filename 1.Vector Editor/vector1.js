@@ -17,6 +17,8 @@ document.querySelectorAll('#vector-toolbar .tool').forEach(btn => {
   });
 });
 
+
+
 // Color changes............................................................................
 
 document.getElementById('fill-color').addEventListener('input', (e) => {
@@ -66,8 +68,11 @@ function activateTool(tool) {
       canvas.off('mouse:down', opt);
     });
   }
+
+// TEXT CODE......................................................................
+
   if (tool === 'text') {
-    canvas.on('mouse:down', function opt(e) {
+    canvas.once('mouse:down', function opt(e) {
       const pointer = canvas.getPointer(e.e);
       const text = new fabric.IText('Text', {
         left: pointer.x,
@@ -75,7 +80,8 @@ function activateTool(tool) {
         fill: document.getElementById('fill-color').value
       });
       canvas.add(text);
-      canvas.off('mouse:down', opt);
+    canvas.setActiveObject(text);
+    syncTextPanel(text); // update panel immediately
     });
   }
 }

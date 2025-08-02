@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="1.Vector Editor/Tools.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <body>
 
@@ -45,6 +48,77 @@
         <div class="dropdown-item">About</div>
       </div>
     </div>
+
+
+
+<!-- Workspace Panel Below Menu Bar -->
+<div id="workspace-panel">
+  <div class="workspace-content">
+    <!-- Example placeholder items -->
+    <button class="workspace-btn">Option 1</button>
+    <button class="workspace-btn">Option 2</button>   
+    <button class="workspace-btn">Option 3</button>
+    <button class="workspace-btn">Option 4</button>   
+    <button class="workspace-btn">Option 5</button>
+    <span class="workspace-text">Workspace Info</span>
+  </div>
+</div>
+
+
+
+<div id="workspace-panel">
+  <div class="workspace-content">
+    <!-- Other controls here / BLEND MODE -->
+    <div class="blend-mode-control">
+      <label for="blendMode">Blending Mode:</label>
+      <select id="blendMode" onchange="updateBlendMode(this.value)">
+        <option value="normal">Normal</option>
+        <option value="multiply">Multiply</option>
+        <option value="screen">Screen</option>
+        <option value="overlay">Overlay</option>
+        <option value="darken">Darken</option>
+        <option value="lighten">Lighten</option>
+        <option value="color-dodge">Color Dodge</option>
+        <option value="color-burn">Color Burn</option>
+        <option value="hard-light">Hard Light</option>
+        <option value="soft-light">Soft Light</option>
+        <option value="difference">Difference</option>
+        <option value="exclusion">Exclusion</option>
+        <option value="hue">Hue</option>
+        <option value="saturation">Saturation</option>
+        <option value="color">Color</option>
+        <option value="luminosity">Luminosity</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+<!-- TEXTS -->
+
+<div class="text-panel" id="text-panel">
+  <select id="fontFamily" style="font-family: Arial;">
+    <option value="Arial" style="font-family: Arial;">Arial</option>
+    <option value="Courier New" style="font-family: 'Courier New';">Courier New</option>
+    <option value="Georgia" style="font-family: Georgia;">Georgia</option>
+    <option value="Helvetica" style="font-family: Helvetica;">Helvetica</option>
+    <option value="Times New Roman" style="font-family: 'Times New Roman';">Times New Roman</option>
+    <option value="Verdana" style="font-family: Verdana;">Verdana</option>
+  </select>
+
+  <input type="number" id="fontSize" min="8" max="200" value="32" />
+
+  <button id="boldBtn"><b>B</b></button>
+  <button id="italicBtn"><i>I</i></button>
+  <button id="underlineBtn"><u>U</u></button>
+  <button id="strikeBtn"><s>S</s></button>
+
+  <button id="alignLeft" title="Align Left"><i class="fa-solid fa-align-left"></i></button>
+  <button id="alignCenter" title="Align Center"><i class="fa-solid fa-align-center"></i></button>
+  <button id="alignRight" title="Align Right"><i class="fa-solid fa-align-right"></i></button>
+</div>
+
+
   </div>
   
 
@@ -54,7 +128,7 @@
   <div id="vector-editor">
     <!-- Left Toolbar -->
     <div id="vector-toolbar">
-      <button class="tool" data-tool="select" title="Select">🖱</button>
+      <button class="tool" data-tool="select" title="Select"><i class="fa-solid fa-mouse-pointer"></i></button>
       <button class="tool" data-tool="pen" title="Pen Tool">✒️</button>
       <button class="tool" data-tool="edit-path" title="Edit Path">🖊️</button>
       <button class="tool" data-tool="pencil" title="Pencil">✏️</button>
@@ -74,9 +148,7 @@
   </div>
  </div>
 
-
-
-      <button class="tool" data-tool="text" title="Text">🔤</button>
+      <button class="tool" data-tool="text"><i class="fa-solid fa-font"></i></button>
     </div>
 
   <!-- Canvas Area -->
@@ -96,7 +168,7 @@
       <h4>Gradient Fill</h4>
       <!-- Gradient Fill Dropdown -->
       <div class="tool-dropdown gradient-dropdown">
-         <button id="gradient-button" class="tool" title="Gradient Fill">🌈 ▾</button>
+         <button id="gradient-button" class="tool" title="Gradient Fill">🌈 Gradient ▾</button>
            <div class="tool-dropdown-list-left" id="gradient-list">
            <label>Start Color: <input type="color" id="grad-start" value="#ff0000" /></label>
            <label>End Color: <input type="color" id="grad-end" value="#0000ff" /></label>
@@ -112,27 +184,42 @@
      </div>
 
 
-
+<h4>Layers</h4>
 <!-- Layers Dropdown -->
 <div class="tool-dropdown layers-dropdown">
-  <button id="layers-button" class="tool" title="Layers">📑 ▾</button>
+  <button id="layers-button" class="tool" title="Layers">📑Layers ▾</button>
   <div class="tool-dropdown-list-left" id="layers-list">
     <div id="layers-container"></div>
     <hr>
     <button id="add-layer">Add Layer</button>
+  </div>
+  </div>
 
-    <!-- 
-    
-    VECTOR UPDATELAYERS
-    
-    <hr>
-    <button id="lock-selected">Lock Selected</button>
-    <button id="unlock-selected">Unlock Selected</button>
-    <button id="hide-selected">Hide Selected</button>
-    <button id="show-selected">Show Selected</button>
-    <button id="delete-selected">Delete Selected</button>
 
-    </div> -->
+
+
+<div class="properties-controls">
+  <h4>Properties</h4>
+  <label>
+    Left:
+    <input type="number" id="propLeft" onchange="updateProperty('left')" />
+  </label>
+  <label>
+    Top:
+    <input type="number" id="propTop" onchange="updateProperty('top')" />
+  </label>
+  <label>
+    Width:
+    <input type="number" id="propWidth" onchange="updateProperty('width')" />
+  </label>
+  <label>
+    Height:
+    <input type="number" id="propHeight" onchange="updateProperty('height')" />
+  </label>
+  <label>
+    Angle:
+    <input type="number" id="propAngle" onchange="updateProperty('angle')" />
+  </label>
 </div>
 
 
@@ -142,14 +229,13 @@
 
 
 
-
-    </div>
   </div>
 
   
 
   <script src="1.Vector Editor/vector1.js"></script>
   <script src="1.Vector Editor/vector2.js"></script>
+  <script src="1.Vector Editor/vector3.js"></script>
   <!-- <script src="1.Vector Editor/vector_update.LayersPanel..js"></script> -->
 </body>
 </html>
