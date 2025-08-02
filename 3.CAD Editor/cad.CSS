@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #1e1e1e;
+  color: white;
+  height: 100vh;
+  display: flex;
+}
+
+#cad-editor {
+  display: flex;
+  width: 100%;
+}
+
+#cad-toolbar {
+  width: 60px;
+  background: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+
+#cad-toolbar button {
+  background: #444;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#cad-toolbar button:hover {
+  background: #666;
+}
+
+#cad-canvas-container {
+  flex: 1;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cad-side {
+  width: 220px;
+  background: #2c2c2c;
+  padding: 10px;
+  border-left: 1px solid #444;
+}
+
+#cad-side h3 {
+  margin-top: 0;
+}
+
+#cad-side label {
+  display: block;
+  margin-bottom: 10px;
+}

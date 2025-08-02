@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #1e1e1e;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* stack menu + editor */
+}
+
+
+
+
+/* EDICTOR CANVAS ........................... */
+
+
+
+#vector-editor {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+
+#vector-toolbar {
+  width: 60px;
+  background: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+}
+
+#vector-toolbar button {
+  background: #444;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#vector-toolbar button:hover {
+  background: #666;
+}
+
+#vector-canvas-container {
+  flex: 1;
+  background: #333;
+}
+
+#vector-properties {
+  width: 200px;
+  background: #2c2c2c;
+  padding: 10px;
+  border-left: 1px solid #444;
+}
+
+
+#vector-properties h3 {
+  margin-top: 0;
+}
+
+
+
+#vector-properties label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#vector-properties input[type="color"],
+#vector-properties input[type="number"],
+#vector-properties input[type="range"] {
+  margin-left: 5px;
+}
+
+

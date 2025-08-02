@@ -1,0 +1,230 @@
+/*MENU BAR........................................... */
+
+
+#menu-bar {
+  display: flex;
+  background: #2c2c2c;
+  padding: 0;
+  border-bottom: 1px solid #444;
+  user-select: none;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background: #444;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  min-width: 180px;
+}
+
+.dropdown-item {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #555;
+}
+
+.menu:hover .dropdown {
+  display: block;
+}
+
+
+/* SHAPE DROPDOWN............................................................ */
+
+.tool-dropdown {
+  position: relative;
+}
+
+.tool-dropdown button {
+  width: 100%;
+}
+
+.tool-dropdown-list {
+  display: none;
+  position: absolute;
+  left: 60px;
+  top: 0;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  z-index: 20;
+  min-width: 150px;
+}
+
+.tool-dropdown-item {
+  padding: 8px 10px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tool-dropdown-item:hover {
+  background: #555;
+}
+
+
+/* Gradient Dropdown Styling...................................................*/
+
+
+.tool-dropdown-list-left {
+  display: none;
+  position: absolute;
+  right: 60px; /* opens to the left */
+  top: 0;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  z-index: 20;
+  min-width: 170px;
+  padding: 10px;
+}
+
+.tool-dropdown-list-left label {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.tool-dropdown-list-left input[type="color"] {
+  margin-left: 5px;
+}
+
+.tool-dropdown-list-left button {
+  width: 100%;
+  background: #444;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.tool-dropdown-list-left button:hover {
+  background: #666;
+}
+
+.tool-dropdown-list-left select {
+  margin-left: 5px;
+  width: 100%;
+  padding: 3px;
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+
+
+/* LAYERS Dropdown Styling...................................................*/
+
+
+/* Layers dropdown */
+#layers-list {
+  display: none;
+  position: absolute;
+  right: 60px;
+  top: 0;
+  background: #2c2c2c;
+  border: 1px solid #444;
+  z-index: 20;
+  min-width: 200px;
+  padding: 10px;
+}
+
+#layers-container {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.layer-item {
+  background: #444;
+  color: white;
+  padding: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.layer-item.active {
+  background: #666;
+}
+
+.layer-actions button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+#add-layer {
+  width: 100%;
+  background: #444;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#add-layer:hover {
+  background: #666;
+}
+
+
+
+/* LAYER DRAGGING.............................*/
+
+
+.layer-item.dragging {
+  opacity: 0.5;
+}
+
+.layer-item {
+  border-top: 2px solid transparent;
+}
+
+
+
+/* Layer vector updatelayer .................
+
+.layer-item.active {
+  background: #666;
+}
+
+#layers-list button {
+  width: 100%;
+  background: #444;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+#layers-list button:hover {
+  background: #666;
+} */
+

@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #1e1e1e;
+  color: white;
+  height: 100vh;
+  display: flex;
+}
+
+#photo-editor {
+  display: flex;
+  width: 100%;
+}
+
+#photo-toolbar {
+  width: 60px;
+  background: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+}
+
+#photo-toolbar button {
+  background: #444;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#photo-toolbar button:hover {
+  background: #666;
+}
+
+#photo-canvas-container {
+  flex: 1;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#photo-side {
+  width: 220px;
+  background: #2c2c2c;
+  padding: 10px;
+  border-left: 1px solid #444;
+}
+
+#photo-side h3 {
+  margin-top: 10px;
+}
+
+#photo-side label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="file"],
+input[type="color"],
+input[type="range"] {
+  width: 100%;
+}

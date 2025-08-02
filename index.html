@@ -1,43 +1,21 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo Editing Mode</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi Editor</title>
+  <link rel="stylesheet" href="Main/style.css">
 </head>
 <body>
-  <div id="photo-editor">
-    <div id="toolbar">
-      <button data-tool="move" title="Move">🖐️</button>
-      <button data-tool="crop" title="Crop">✂️</button>
-      <button data-tool="brush" title="Brush">🖌️</button>
-      <button data-tool="eraser" title="Eraser">🩹</button>
-      <button data-tool="fill" title="Fill">🪣</button>
-      <button data-tool="picker" title="Color Picker">🎯</button>
-      <button data-tool="text" title="Text">🔤</button>
-    </div>
-
-    <div id="editor-container">
-      <canvas id="photo-canvas"></canvas>
-    </div>
-
-    <div id="layers-panel">
-      <h3>Layers</h3>
-      <ul id="layers-list"></ul>
-    </div>
-
-    <input type="color" id="color-picker" value="#000000" />
-    <input type="file" id="image-loader" accept="image/*" />
-
-    <div id="adjustments">
-      <h3>Adjustments</h3>
-      <label>Brightness <input type="range" id="brightness" min="-100" max="100" value="0"></label>
-      <label>Contrast <input type="range" id="contrast" min="-100" max="100" value="0"></label>
-      <label>Saturation <input type="range" id="saturation" min="-100" max="100" value="0"></label>
+  <div class="container">
+    <h1>Choose Editor Mode</h1>
+    <div class="buttons">
+      <button onclick="openEditor('vector.html')">Vector Editor</button>
+      <button onclick="openEditor('photo.html')">Photo Editor</button>
+      <button onclick="openEditor('cad.html')">CAD Editor</button>
     </div>
   </div>
-
-  <script src="main.js"></script>
+  <script src="Main/main.js"></script>
 </body>
 </html>

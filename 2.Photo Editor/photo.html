@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Editor</title>
+  <link rel="stylesheet" href="2.Photo Editor/photo.css" />
+</head>
+<body>
+  <div id="photo-editor">
+    <!-- Toolbar -->
+    <div id="photo-toolbar">
+      <button data-tool="move" title="Move">🖐️</button>
+      <button data-tool="brush" title="Brush">🖌️</button>
+      <button data-tool="eraser" title="Eraser">🩹</button>
+      <button data-tool="fill" title="Fill">🪣</button>
+      <button data-tool="text" title="Text">🔤</button>
+    </div>
+
+    <!-- Canvas Area -->
+    <div id="photo-canvas-container">
+      <canvas id="photo-canvas"></canvas>
+    </div>
+
+    <!-- Side Panel -->
+    <div id="photo-side">
+      <h3>Tools</h3>
+      <label>Color: <input type="color" id="color-picker" value="#000000"></label>
+      <label>Brush Size: <input type="range" id="brush-size" min="1" max="50" value="5"></label>
+
+      <h3>Image</h3>
+      <input type="file" id="image-loader" accept="image/*" />
+
+      <h3>Adjustments</h3>
+      <label>Brightness: <input type="range" id="brightness" min="-100" max="100" value="0"></label>
+      <label>Contrast: <input type="range" id="contrast" min="-100" max="100" value="0"></label>
+      <label>Saturation: <input type="range" id="saturation" min="-100" max="100" value="0"></label>
+    </div>
+  </div>
+
+  <script src="2.Photo Editor/photo.js"></script>
+</body>
+</html>

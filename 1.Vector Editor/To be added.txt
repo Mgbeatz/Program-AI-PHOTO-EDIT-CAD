@@ -1,0 +1,37 @@
+To be added
+
+🛠 Additional Tools for Vector Editor
+1. Shape Tools - DONE..........................................................
+   Rectangle
+   Circle / Ellipse
+   Line
+   Polygon
+
+2. Advanced Drawing Tools
+   Pen tool (Bezier curves)
+   Path editing (move anchor points)
+
+3. Editing Tools
+   Selection / Move
+   Rotate
+   Scale
+   Duplicate
+   Delete
+ 
+4. Object Features - NOW ...........................
+   Group / Ungroup
+   Layer panel
+   Arrange (Send to back / Bring to front)
+
+5. Style Controls - DONE....................................................
+   Stroke width selector
+   Opacity control
+   Gradient fill
+
+6. File Handling - DONE......................................................
+   Import SVG
+   Export as SVG, PNG, JPEG
+
+
+
+   Keyboard keys

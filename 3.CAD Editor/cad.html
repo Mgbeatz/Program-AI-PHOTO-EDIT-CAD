@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CAD Editor</title>
+  <link rel="stylesheet" href="3.CAD Editor/cad.CSS" />
+</head>
+<body>
+  <div id="cad-editor">
+    <!-- Toolbar -->
+    <div id="cad-toolbar">
+      <button class="tool" data-tool="select" title="Select">🖱</button>
+      <button class="tool" data-tool="line" title="Line">📏</button>
+      <button class="tool" data-tool="rectangle" title="Rectangle">▭</button>
+      <button class="tool" data-tool="circle" title="Circle">⚪</button>
+      <button class="tool" data-tool="ellipse" title="Ellipse">⬭</button>
+      <button class="tool" data-tool="arc" title="Arc">◠</button>
+      <button class="tool" data-tool="polyline" title="Polyline">〰</button>
+    </div>
+
+
+
+    <!-- Canvas Area -->
+    <div id="cad-canvas-container">
+      <canvas id="cad-canvas"></canvas>
+    </div>
+
+
+    
+    <!-- Side Panel -->
+    <div id="cad-side">
+      <h3>Settings</h3>
+      <label><input type="checkbox" id="snap-grid" checked> Snap to Grid</label>
+      <label>Grid Size: <input type="number" id="grid-size" value="20" min="5"></label>
+    </div>
+  </div>
+
+  <script src="3.CAD Editor/cad.js"></script>
+</body>
+</html>

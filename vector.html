@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vector Editor</title>
+  <link rel="stylesheet" href="1.Vector Editor/vector.css" />
+  <link rel="stylesheet" href="1.Vector Editor/Tools.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+
+<body>
+
+  <!-- Menu Bar Always at Top -->
+  <div id="menu-bar">
+
+    <!-- Menus here -->
+    <div class="menu">
+      <button>File ▾</button>
+      <div class="dropdown">
+        <label for="import-svg" class="dropdown-item">Import SVG</label>
+        <input type="file" id="import-svg" accept=".svg" style="display:none;">
+        <div class="dropdown-item" id="export-svg">Export as SVG</div>
+        <div class="dropdown-item" id="export-png">Export as PNG</div>
+        <div class="dropdown-item" id="export-jpeg">Export as JPEG</div>
+      </div>
+    </div>
+    <div class="menu">
+      <button>Edit ▾</button>
+      <div class="dropdown">
+        <div class="dropdown-item">Undo</div>
+        <div class="dropdown-item">Redo</div>
+      </div>
+    </div>
+    <div class="menu">
+      <button>Window ▾</button>
+      <div class="dropdown">
+        <div class="dropdown-item">Layers</div>
+        <div class="dropdown-item">Properties</div>
+      </div>
+    </div>
+    <div class="menu">
+      <button>Help ▾</button>
+      <div class="dropdown">
+        <div class="dropdown-item">About</div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+  <div id="vector-editor">
+    <!-- Left Toolbar -->
+    <div id="vector-toolbar">
+      <button class="tool" data-tool="select" title="Select">🖱</button>
+      <button class="tool" data-tool="pen" title="Pen Tool">✒️</button>
+      <button class="tool" data-tool="edit-path" title="Edit Path">🖊️</button>
+      <button class="tool" data-tool="pencil" title="Pencil">✏️</button>
+      <button class="tool" data-tool="brush" title="Brush">🖌️</button>
+
+    <!-- Shape Tool Dropdown -->
+
+  <div class="tool-dropdown">
+  <button id="shapes-button" class="tool" title="Shapes">⬛ ▾</button>
+  <div class="tool-dropdown-list" id="shapes-list">
+    <div class="tool-dropdown-item" data-shape="rectangle">▭ Rectangle</div>
+    <div class="tool-dropdown-item" data-shape="circle">⚪ Circle</div>
+    <div class="tool-dropdown-item" data-shape="ellipse">⬭ Ellipse</div>
+    <div class="tool-dropdown-item" data-shape="line">📏 Line</div>
+    <div class="tool-dropdown-item" data-shape="triangle">▲ Triangle</div>
+    <div class="tool-dropdown-item" data-shape="polygon">🔷 Polygon</div>
+  </div>
+ </div>
+
+
+
+      <button class="tool" data-tool="text" title="Text">🔤</button>
+    </div>
+
+  <!-- Canvas Area -->
+  <div id="vector-canvas-container">
+      <canvas id="vector-canvas"></canvas>
+  </div>
+
+  <!-- Right Properties Panel -->
+  <div id="vector-properties">
+      <h3>Properties</h3>
+      <label>Fill Color: <input type="color" id="fill-color" value="#000000" /></label>
+      <label>Stroke Color: <input type="color" id="stroke-color" value="#000000" /></label>
+
+      <label>Stroke Width: <input type="number" id="stroke-width" min="1" max="20" value="2" /></label>
+      <label>Opacity: <input type="range" id="opacity" min="0" max="1" step="0.1" value="1" /></label>
+
+      <h4>Gradient Fill</h4>
+      <!-- Gradient Fill Dropdown -->
+      <div class="tool-dropdown gradient-dropdown">
+         <button id="gradient-button" class="tool" title="Gradient Fill">🌈 ▾</button>
+           <div class="tool-dropdown-list-left" id="gradient-list">
+           <label>Start Color: <input type="color" id="grad-start" value="#ff0000" /></label>
+           <label>End Color: <input type="color" id="grad-end" value="#0000ff" /></label>
+           <label>Direction:
+           <select id="grad-direction">
+           <option value="horizontal">Horizontal</option>
+           <option value="vertical">Vertical</option>
+           <option value="diagonal">Diagonal</option>
+           </select>
+           </label>
+         <button id="apply-gradient">Apply Gradient</button>
+      </div>
+     </div>
+
+
+
+<!-- Layers Dropdown -->
+<div class="tool-dropdown layers-dropdown">
+  <button id="layers-button" class="tool" title="Layers">📑 ▾</button>
+  <div class="tool-dropdown-list-left" id="layers-list">
+    <div id="layers-container"></div>
+    <hr>
+    <button id="add-layer">Add Layer</button>
+
+    <!-- 
+    
+    VECTOR UPDATELAYERS
+    
+    <hr>
+    <button id="lock-selected">Lock Selected</button>
+    <button id="unlock-selected">Unlock Selected</button>
+    <button id="hide-selected">Hide Selected</button>
+    <button id="show-selected">Show Selected</button>
+    <button id="delete-selected">Delete Selected</button>
+
+    </div> -->
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  
+
+  <script src="1.Vector Editor/vector1.js"></script>
+  <script src="1.Vector Editor/vector2.js"></script>
+  <!-- <script src="1.Vector Editor/vector_update.LayersPanel..js"></script> -->
+</body>
+</html>
