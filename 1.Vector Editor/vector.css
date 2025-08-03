@@ -88,29 +88,10 @@ body {
   background: #333;
 }
 
-#vector-properties {
-  width: 200px;
-  background: #2c2c2c;
-  padding: 10px;
-  border-left: 1px solid #444;
-}
-
-
-#vector-properties h3 {
-  margin-top: 0;
-}
 
 
 
-#vector-properties label {
-  display: block;
-  margin-bottom: 8px;
-}
 
-#vector-properties input[type="color"],
-#vector-properties input[type="number"],
-#vector-properties input[type="range"] {
-  margin-left: 5px;
-}
+
 
 

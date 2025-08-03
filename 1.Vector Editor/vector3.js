@@ -81,8 +81,13 @@ alignRightBtn.addEventListener('click', () => {
   updateTextProperty('textAlign', 'right');
 });
 
+
+
+
+
+
 // ----------------------
-// OPTIONAL: Auto-update panel when selecting text
+// OPTIONAL: Auto-update panel when selecting text..............................................
 // ----------------------
 canvas.on('selection:created', syncTextPanel);
 canvas.on('selection:updated', syncTextPanel);
@@ -218,3 +223,99 @@ canvas.on('selection:updated', (e) => updatePropertiesPanel(e.selected[0]));
 canvas.on('object:moving', (e) => updatePropertiesPanel(e.target));
 canvas.on('object:scaling', (e) => updatePropertiesPanel(e.target));
 canvas.on('object:rotating', (e) => updatePropertiesPanel(e.target));
+
+
+
+
+
+
+// ----------------------
+// EFFECTS PANEL...............................................................................
+
+// ----------------------
+const dropShadowToggle = document.getElementById('dropShadowToggle');
+const glowToggle = document.getElementById('glowToggle');
+const outerGlowToggle = document.getElementById('outerGlowToggle');
+
+const blurSlider = document.getElementById('blurSlider');
+const offsetXSlider = document.getElementById('offsetXSlider');
+const offsetYSlider = document.getElementById('offsetYSlider');
+const opacitySlider = document.getElementById('opacitySlider');
+const shadowColorPicker = document.getElementById('shadowColorPicker');
+
+// Apply shadow effect
+function applyShadowEffect() {
+  const obj = canvas.getActiveObject();
+  if (!obj) return;
+
+  if (dropShadowToggle.checked || glowToggle.checked || outerGlowToggle.checked) {
+    obj.set('shadow', {
+      color: shadowColorPicker.value,
+      blur: parseFloat(blurSlider.value),
+      offsetX: parseFloat(offsetXSlider.value),
+      offsetY: parseFloat(offsetYSlider.value),
+      opacity: parseFloat(opacitySlider.value)
+    });
+  } else {
+    obj.set('shadow', null);
+  }
+
+  canvas.renderAll();
+}
+
+// Event listeners
+[dropShadowToggle, glowToggle, outerGlowToggle, blurSlider, offsetXSlider, offsetYSlider, opacitySlider, shadowColorPicker]
+.forEach(input => {
+  input.addEventListener('input', applyShadowEffect);
+});
+
+// Sync panel when selecting an object
+canvas.on('selection:created', syncEffectsPanel);
+canvas.on('selection:updated', syncEffectsPanel);
+
+function syncEffectsPanel(e) {
+  const obj = e.selected[0];
+  if (!obj) return;
+
+  const shadow = obj.shadow;
+  if (shadow) {
+    blurSlider.value = shadow.blur || 0;
+    offsetXSlider.value = shadow.offsetX || 0;
+    offsetYSlider.value = shadow.offsetY || 0;
+    opacitySlider.value = shadow.opacity || 1;
+    shadowColorPicker.value = shadow.color || '#000000';
+    dropShadowToggle.checked = true;
+  } else {
+    dropShadowToggle.checked = false;
+    glowToggle.checked = false;
+    outerGlowToggle.checked = false;
+  }
+}
+
+
+
+//
+
+document.addEventListener('DOMContentLoaded', () => {
+  const option1Btn = document.getElementById('option1-btn');
+  const option2Btn = document.getElementById('option2-btn');
+  const panel1 = document.getElementById('vector-properties1');
+  const panel2 = document.getElementById('vector-properties2');
+
+  // Start: Panel 1 visible, Panel 2 hidden
+  panel1.classList.remove('hidden');
+  panel2.classList.add('hidden');
+
+  // Option 1 button
+  option1Btn.addEventListener('click', () => {
+    panel1.classList.remove('hidden');
+    panel2.classList.add('hidden');
+  });
+
+  // Option 2 button
+  option2Btn.addEventListener('click', () => {
+    panel2.classList.remove('hidden');
+    panel1.classList.add('hidden');
+  });
+});
+

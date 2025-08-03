@@ -1,3 +1,7 @@
+
+
+
+
 const canvas = new fabric.Canvas('vector-canvas', {
   backgroundColor: '#fff',
   width: window.innerWidth - 260,

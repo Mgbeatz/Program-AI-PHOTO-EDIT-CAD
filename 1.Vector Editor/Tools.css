@@ -32,7 +32,7 @@
   border: 1px solid #444;
   top: 100%;
   left: 0;
-  z-index: 10;
+  z-index: 9999;
   min-width: 180px;
 }
 
@@ -95,7 +95,7 @@
   top: 0;
   background: #2c2c2c;
   border: 1px solid #444;
-  z-index: 20;
+  z-index: 9999;
   min-width: 170px;
   padding: 10px;
 }
@@ -145,7 +145,7 @@
   top: 0;
   background: #2c2c2c;
   border: 1px solid #444;
-  z-index: 20;
+  z-index: 9999;
   min-width: 200px;
   padding: 10px;
 }
@@ -208,25 +208,6 @@
 
 
 
-/* Layer vector updatelayer .................
-
-.layer-item.active {
-  background: #666;
-}
-
-#layers-list button {
-  width: 100%;
-  background: #444;
-  color: white;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-  margin-top: 3px;
-}
-
-#layers-list button:hover {
-  background: #666;
-} */
 
 /* TEXT STYLING ...............................................*/
 
@@ -323,4 +304,170 @@
   color: white;
   border: 1px solid #666;
   border-radius: 3px;
+}
+
+
+
+
+/* EFFECTS.....................................................................*/
+
+
+.effects-panel {
+  background: #252525;
+  padding: 8px;
+  border-top: 1px solid #444;
+  color: white;
+}
+
+.effects-panel h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.effects-panel label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.slider-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.slider-group input[type="range"] {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.slider-group input[type="color"] {
+  margin-left: 10px;
+}
+
+
+
+
+
+/* VECTOR PROPERTIES 1...........................................................................*/
+
+
+#vector-properties1 {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px); /* Adjust for menu bar height */
+  overflow-y: auto;
+  background: #1e1e1e;
+  border-left: 1px solid #444;
+  padding: 8px;
+}
+
+
+#vector-properties1.hidden,
+#vector-properties2.hidden {
+  display: none;
+}
+
+
+
+#vector-properties1::-webkit-scrollbar {
+  width: 8px;
+}
+
+#vector-properties1::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+#vector-properties1::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+#vector-properties1 h3 {
+  margin-top: 0;
+}
+
+#vector-properties1 h3, 
+#vector-properties1 h4 {
+  position: sticky;
+  top: 0;
+  background: #1e1e1e;
+  z-index: 5;
+}
+
+#vector-properties1 label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#vector-properties1 input[type="color"],
+#vector-properties1 input[type="number"],
+#vector-properties1 input[type="range"] {
+  margin-left: 5px;
+}
+
+
+
+.workspace-btn.active {
+  background: #666;
+  color: white;
+}
+
+
+
+
+
+
+/* VECTOR PROPERTIES 2...........................................................................*/
+
+
+#vector-properties2 {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px); /* Adjust for menu bar height */
+  overflow-y: auto;
+  background: #1e1e1e;
+  border-left: 1px solid #444;
+  padding: 8px;
+}
+
+
+
+
+
+#vector-properties2::-webkit-scrollbar {
+  width: 8px;
+}
+
+#vector-properties2::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+#vector-properties2::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+#vector-properties2 h3 {
+  margin-top: 0;
+}
+
+#vector-properties2 h3, 
+#vector-properties2 h4 {
+  position: sticky;
+  top: 0;
+  background: #1e1e1e;
+  z-index: 5;
+}
+
+#vector-properties2 label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#vector-properties2 input[type="color"],
+#vector-properties2 input[type="number"],
+#vector-properties2 input[type="range"] {
+  margin-left: 5px;
 }

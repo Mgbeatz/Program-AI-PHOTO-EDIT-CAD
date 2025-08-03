@@ -51,12 +51,16 @@
 
 
 
-<!-- Workspace Panel Below Menu Bar -->
+<!-- Workspace Panel Below Menu Bar................................................... -->
+
+
+
+
 <div id="workspace-panel">
   <div class="workspace-content">
     <!-- Example placeholder items -->
-    <button class="workspace-btn">Option 1</button>
-    <button class="workspace-btn">Option 2</button>   
+    <button class="workspace-btn" id="option1-btn">Properties</button>
+    <button class="workspace-btn" id="option2-btn">Option 2</button>   
     <button class="workspace-btn">Option 3</button>
     <button class="workspace-btn">Option 4</button>   
     <button class="workspace-btn">Option 5</button>
@@ -156,8 +160,10 @@
       <canvas id="vector-canvas"></canvas>
   </div>
 
+
+
   <!-- Right Properties Panel -->
-  <div id="vector-properties">
+  <div id="vector-properties1">
       <h3>Properties</h3>
       <label>Fill Color: <input type="color" id="fill-color" value="#000000" /></label>
       <label>Stroke Color: <input type="color" id="stroke-color" value="#000000" /></label>
@@ -184,15 +190,15 @@
      </div>
 
 
-<h4>Layers</h4>
-<!-- Layers Dropdown -->
-<div class="tool-dropdown layers-dropdown">
-  <button id="layers-button" class="tool" title="Layers">📑Layers ▾</button>
-  <div class="tool-dropdown-list-left" id="layers-list">
-    <div id="layers-container"></div>
+     <h4>Layers</h4>
+     <!-- Layers Dropdown -->
+     <div class="tool-dropdown layers-dropdown">
+        <button id="layers-button" class="tool" title="Layers">📑Layers ▾</button>
+        <div class="tool-dropdown-list-left" id="layers-list">
+        <div id="layers-container"></div>
     <hr>
     <button id="add-layer">Add Layer</button>
-  </div>
+    </div>
   </div>
 
 
@@ -225,6 +231,20 @@
 
 
 
+<div class="effects-panel">
+  <h3>Effects</h3>
+  <label><input type="checkbox" id="dropShadowToggle"> Drop Shadow</label>
+  <label><input type="checkbox" id="glowToggle"> Glow</label>
+  <label><input type="checkbox" id="outerGlowToggle"> Outer Glow</label>
+
+  <div class="slider-group">
+    <label>Blur: <input type="range" id="blurSlider" min="0" max="50" value="10"></label>
+    <label>Offset X: <input type="range" id="offsetXSlider" min="-50" max="50" value="5"></label>
+    <label>Offset Y: <input type="range" id="offsetYSlider" min="-50" max="50" value="5"></label>
+    <label>Opacity: <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="0.5"></label>
+    <label>Shadow Color: <input type="color" id="shadowColorPicker" value="#000000"></label>
+  </div>
+</div>
 
 
 

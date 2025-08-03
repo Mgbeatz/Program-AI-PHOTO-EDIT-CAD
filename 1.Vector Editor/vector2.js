@@ -266,6 +266,8 @@ canvas.on('mouse:move', function(opt) {
   }
 });
 
+
+
 // Finish path on double click........................................
 canvas.on('mouse:dblclick', function() {
   if (currentTool === 'pen' && tempPath) {
@@ -340,3 +342,17 @@ canvas.on('selection:created', function(e) {
 canvas.on('selection:cleared', function() {
   if (currentTool === 'edit-path') exitEditPathMode();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
